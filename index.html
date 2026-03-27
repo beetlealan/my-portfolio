@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甲虫影像工坊 | 專業平面設計與視覺創意</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto+Sans+TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .view-transition {
+            transition: opacity: 0.3s ease-in-out;
+        }
+
+        .client-tag {
+            transition: all 0.2s ease;
+        }
+        .client-tag:hover {
+            background-color: rgba(255,255,255,0.15);
+            transform: translateY(-2px);
+        }
+
+        .logo-img {
+            max-height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <!-- 導覽列 -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="showView('main')">
+                    <img src="https://beetlealan.github.io/my-design-assets/logo/logo2020-2-1.png" alt="甲虫影像工坊 Logo" class="logo-img">
+                    <div class="flex flex-col border-l border-slate-200 pl-3 hidden sm:flex">
+                        <span class="text-lg font-bold tracking-tighter text-slate-800 leading-none">甲虫影像工坊</span>
+                        <span class="text-[9px] uppercase tracking-[0.2em] text-slate-500 mt-1">Beetle Design Workshop</span>
+                    </div>
+                </div>
+
+                <div id="nav-links" class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" onclick="showView('main')" class="text-sm font-medium hover:text-blue-600 transition">首頁</a>
+                    <a href="#about" onclick="showView('main')" class="text-sm font-medium hover:text-blue-600 transition">關於</a>
+                    <a href="#services" onclick="showView('main')" class="text-sm font-medium hover:text-blue-600 transition">服務</a>
+                    <a href="#projects-section" onclick="showView('main')" class="text-sm font-medium hover:text-blue-600 transition">作品</a>
+                    <a href="#clients" onclick="showView('main')" class="text-sm font-medium hover:text-blue-600 transition">客戶</a>
+                    <a href="#contact" onclick="showView('main')" class="px-5 py-2 bg-slate-900 text-white text-sm rounded-full hover:bg-slate-800 transition">聯絡洽詢</a>
+                </div>
+                
+                <div id="nav-back" class="hidden flex items-center gap-4">
+                    <button id="back-btn" class="flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-blue-600 transition">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> <span id="back-text">返回</span>
+                    </button>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="menu-btn" class="p-2"><i data-lucide="menu"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- [1] 主頁面視圖 -->
+    <main id="main-view" class="view-transition">
+        <!-- Hero Section -->
+        <section id="home" class="pt-40 pb-24 px-4 bg-white">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-3/5 space-y-8 text-center md:text-left">
+                    <div class="inline-block px-4 py-1.5 bg-slate-100 rounded-full text-sm font-medium text-slate-600 tracking-wide">Established in 2002</div>
+                    <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] text-slate-900">深耕視覺創意<br><span class="text-blue-600">定義品牌價值</span></h1>
+                    <p class="text-slate-600 text-lg md:text-xl max-w-xl leading-relaxed">甲虫影像工坊擁有超過 20 年的設計底蘊，致力於為每一位客戶打造具備市場影響力的視覺作品。</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+                        <a href="#projects-section" class="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-slate-800 transition shadow-lg flex items-center justify-center gap-2">瀏覽作品選輯 <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                        <a href="#contact" class="px-8 py-4 border border-slate-200 rounded-full font-bold hover:bg-slate-50 transition">開啟合作洽談</a>
+                    </div>
+                </div>
+                <div class="md:w-2/5 relative">
+                    <div class="aspect-square bg-slate-100 rounded-3xl overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80" alt="設計創意示意圖" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl hidden lg:block border border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600"><i data-lucide="award" class="w-6 h-6"></i></div>
+                            <div>
+                                <div class="text-xl font-bold text-slate-800">22+ Years</div>
+                                <div class="text-[10px] text-slate-500 uppercase tracking-wider">Design Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 關於我們 -->
+        <section id="about" class="py-24 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold flex items-center gap-3"><span class="w-8 h-1 bg-blue-600"></span> 關於我們</h2>
+                        <p class="text-slate-800 text-xl font-medium leading-relaxed">甲虫影像工坊成立於 2002 年。</p>
+                        <p class="text-slate-600 text-lg leading-loose">主要業務涵蓋平面設計、視覺創意、廣告宣傳、商標識別、產品包裝、網頁設計、EDM、LBC、書籍雜誌、企業型錄、文件報告等領域。我們見證了設計趨勢的更迭，始終不變的是對品質的堅持。</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                        <h4 class="text-slate-400 text-xs font-bold uppercase mb-4 tracking-widest">工坊資歷</h4>
+                        <div class="grid grid-cols-2 gap-8 text-center">
+                            <div><div class="text-4xl font-bold text-slate-800">22+</div><div class="text-xs text-slate-400">從業年數</div></div>
+                            <div><div class="text-4xl font-bold text-slate-800">1000+</div><div class="text-xs text-slate-400">結案作品</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 服務項目 -->
+        <section id="services" class="py-24 bg-white text-center">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-4xl font-bold mb-4 text-slate-900">服務項目</h2>
+                <p class="text-slate-500 mb-20">專業、資深、多元的設計解決方案</p>
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <div class="p-10 rounded-3xl bg-slate-50 group border border-transparent hover:border-slate-200 transition-all">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-8 text-blue-600 group-hover:scale-110 transition-transform"><i data-lucide="shield-check"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-900">商標識別與品牌視覺</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">Logo 設計、CIS 企業識別、商標開發，為您的企業量身打造專業形象。</p>
+                    </div>
+                    <div class="p-10 rounded-3xl bg-slate-50 group border border-transparent hover:border-slate-200 transition-all">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-8 text-purple-600 group-hover:scale-110 transition-transform"><i data-lucide="book-open"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-900">平面設計與書籍雜誌</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">精擅書籍裝幀、雜誌編輯、廣告宣傳及產品包裝，傳遞完美視覺平衡。</p>
+                    </div>
+                    <div class="p-10 rounded-3xl bg-slate-50 group border border-transparent hover:border-slate-200 transition-all">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-8 text-emerald-600 group-hover:scale-110 transition-transform"><i data-lucide="monitor"></i></div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-900">數位行銷與網頁設計</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">網頁 UI/UX、EDM、LBC 數位素材，掌握數位語彙與互動體驗。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作品入口 -->
+        <section id="projects-section" class="py-24 bg-slate-50 text-center">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-slate-900 mb-2">作品選輯</h2>
+                <p class="text-slate-500 mb-16">點擊類別進入瀏覽更多精彩案例</p>
+                <div id="category-entry-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- 客戶群 -->
+        <section id="clients" class="py-24 bg-slate-900 text-white overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start gap-12">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-4">資深業界背書</h2>
+                    <p class="text-slate-400">累積逾 20 年專業資歷，我們曾服務並與眾多頂尖品牌、出版集團攜手合作。</p>
+                </div>
+                <div class="md:w-2/3 flex flex-wrap gap-3 justify-center md:justify-start">
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">國泰世華銀行</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">三立集團</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">台視文化</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">TVBS週刊部</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">城邦出版</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">三采文化</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">邦聯文化</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">讀書共和國出版</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">財團法人中衛發展中心</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">迪夢奇</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">星浪文化</span>
+                    <span class="client-tag px-5 py-2 bg-white/10 rounded-full border border-white/5 text-sm">有喜創意</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 聯絡我們 -->
+        <section id="contact" class="py-24 bg-white text-slate-900">
+            <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8 text-center md:text-left">聯絡洽詢</h2>
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="mail" class="text-blue-600 w-6 h-6"></i>
+                            <div><div class="text-xs text-slate-400 font-bold uppercase mb-1">Email</div><a href="mailto:beetle.design@msa.hinet.net" class="text-xl font-medium hover:text-blue-600 transition">beetle.design@msa.hinet.net</a></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="phone" class="text-blue-600 w-6 h-6"></i>
+                            <div><div class="text-xs text-slate-400 font-bold uppercase mb-1">電話 / 手機</div><div class="text-xl font-medium"><a href="tel:0937463131" class="hover:text-blue-600 transition">0937-463-131</a> | 02-22315593</div></div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i data-lucide="message-circle" class="text-green-500 w-6 h-6"></i>
+                            <div><div class="text-xs text-slate-400 font-bold uppercase mb-1">LINE ID</div><a href="https://line.me/ti/p/dtn6kBorEV" target="_blank" class="text-xl font-medium hover:text-green-500 transition flex items-center gap-2">0203alan <i data-lucide="external-link" class="w-4 h-4 opacity-50"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 p-10 rounded-[2.5rem] text-white shadow-2xl">
+                    <h3 class="text-xl font-bold mb-6 text-center">快速需求留言</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="您的稱呼" class="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder:text-slate-500">
+                        <textarea rows="3" placeholder="請簡述您的需求..." class="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder:text-slate-500"></textarea>
+                        <button type="submit" class="w-full py-4 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition">送出洽詢</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- [2] 分類作品列表視圖 -->
+    <main id="category-view" class="hidden view-transition pt-32 pb-24 min-h-screen bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-12">
+                <h2 id="cat-title" class="text-4xl font-bold mb-2 text-slate-900">分類名稱</h2>
+                <p id="cat-desc" class="text-slate-500">此分類下的專案精選展示</p>
+            </div>
+            <div id="cat-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"></div>
+        </div>
+    </main>
+
+    <!-- [3] 專案詳情視圖 -->
+    <main id="detail-view" class="hidden view-transition pt-32 pb-24 min-h-screen bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div id="project-detail-content"></div>
+            <div class="mt-24 pt-16 border-t border-slate-100">
+                <h3 class="text-2xl font-bold mb-8 text-slate-900">瀏覽更多專案</h3>
+                <div id="related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-16 text-slate-500 text-center bg-slate-900 px-4">
+        <div class="max-w-6xl mx-auto space-y-8">
+            <div class="flex flex-col items-center">
+                <img src="https://beetlealan.github.io/my-design-assets/logo/logo2020-2-1-white-red.png" alt="甲虫影像工坊 Logo" class="h-12 w-auto mb-4 opacity-90">
+                <div class="flex flex-col items-center">
+                    <span class="text-lg font-bold text-white tracking-widest leading-none">甲虫影像工坊</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mt-2">Beetle Design Workshop Since 2002</span>
+                </div>
+            </div>
+            <div class="w-16 h-[1px] bg-slate-800 mx-auto"></div>
+            <p class="text-sm">© 2024 甲虫影像工坊 版權所有。<br>Beetle Design Workshop Since 2002</p>
+        </div>
+    </footer>
+
+    <script>
+        const categoryMeta = {
+            'books': { title: '書籍雜誌', desc: '深耕出版業界 20 年，從封面裝幀到內頁美術編輯。', cover: 'https://beetlealan.github.io/my-design-assets/book/2025%E5%8F%B0%E5%BC%8F%E9%BA%B5%E5%8C%85%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A2300.jpg' },
+            'cis': { title: '商標識別', desc: '為企業與品牌定義核心靈魂與標準視覺系統。', cover: 'https://beetlealan.github.io/my-design-assets/cis/ANR_CI_b-01.jpg' },
+            'packaging': { title: '產品包裝', desc: '結合結構美學與平面視覺，提升產品的溢價空間。', cover: 'https://beetlealan.github.io/my-design-assets/package/%E8%86%A0%E5%8E%9F%E8%9B%8B%E7%99%BD%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F-%E6%AD%A3%E9%9D%A2.jpg' },
+            'digital': { title: '數位網頁', desc: '掌握數位語彙，從活動官網到 EDM 數位素材。', cover: 'https://beetlealan.github.io/my-design-assets/digitalWeb/www.cathaybk.com.tw_cathaybk_personal_product_wealth_vip_1.jpg' },
+            'catalog': { title: '型錄報告', desc: '企業型錄與文件報告規劃，展現品牌專業與嚴謹。', cover: 'https://beetlealan.github.io/my-design-assets/dm/Cathays_View_201902_1COVER.jpg' },
+            'advertising': { title: '廣告宣傳', desc: '從平面廣告到大型戶外看板，精準捕捉受眾目光。', cover: 'https://beetlealan.github.io/my-design-assets/ad/cathay-21x28.5cm5-01.jpg' }
+        };
+
+        const projectData = [
+            // --- 書籍雜誌 ---
+            { 
+                id: 'b1', type: 'books', title: '台式麵包風味進化學', category: '封面設計 / 內頁排版', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/book/2025%E5%8F%B0%E5%BC%8F%E9%BA%B5%E5%8C%85%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A2300.jpg',
+                description: '為烘焙職人專著打造深度視覺體驗，將麵包的質感與職人精神轉化為紙本藝術。',
+                story: '在《台式麵包風味進化學》專案中，我們致力於打破傳統工具書的框架。透過層次豐富的版面編排與材質感攝影，將麵包的孔洞、香氣與手感在平面上立體化。封面採用細緻感的設計想法，呈現麵包溫潤的觸感與色澤。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/book/2025%E5%8F%B0%E5%BC%8F%E9%BA%B5%E5%8C%85P016-017.jpg','https://beetlealan.github.io/my-design-assets/book/2025%E5%8F%B0%E5%BC%8F%E9%BA%B5%E5%8C%85P046-047.jpg']
+            },
+            { 
+                id: 'b2', type: 'books', title: '正能量的配色設計提案集', category: '封面設計 / 視覺規劃', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/book/2025%E6%AD%A3%E8%83%BD%E9%87%8F%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A2.jpg', 
+                description: '為創作者提供精準的色彩解決方案，透過日系美學呈現飽滿且具療癒感的配色邏輯。',
+                story: '《正能量的配色設計提案集》專注於色彩與心理情緒的深度連結。設計上運用了大量的留白與明亮的色塊對比，營造出空氣感與清新感。透過極簡的版面規劃，讓配色提案更具直覺性，達成「視覺療癒」與「功能實用」的完美平衡。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/book/2025%E6%AD%A3%E8%83%BD%E9%87%8F%E5%B0%81%E9%9D%A2%E5%8F%B0150.jpg']
+            },
+            { 
+                id: 'b3', type: 'books', title: '日日完銷的貝果專賣店', category: '封面設計 / 視覺規劃', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/book/2025%E8%B2%9D%E6%9E%9C%E6%9B%B8%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A2300.jpg',
+                description: '以純粹、乾淨的視覺語彙，呈現職人對於貝果製作的極致追求與美味深度。',
+                story: '針對《日日完銷的貝果專賣店》，我們在設計上採取「低干擾、高質感」的策略。利用明亮的採光與自然感的排版，將貝果紮實的質地與多樣的風味立體地呈現在封面上。視覺規劃上強調整潔的資訊層級，讓讀者在翻開書頁前，就能感受到溫暖的生活美學與職人的誠懇態度。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/book/2025%E8%B2%9D%E6%9E%9C%E6%9B%B8%E5%B0%81%E5%BA%95150.jpg','https://beetlealan.github.io/my-design-assets/book/2025%E8%B2%9D%E6%9E%9C%E6%9B%B8%E5%B0%81%E9%9D%A2150.jpg']
+            },
+            { 
+                id: 'b4', type: 'books', title: '非凡可頌的匠心技術與工法解析', category: '封面設計 / 視覺規劃', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/book/2025%E9%9D%9E%E5%87%A1%E5%8F%AF%E9%A0%8C%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A2300.jpg',
+                description: '深入解析頂級可頌的摺疊工藝與烘焙科學，將層次分明的職人技術轉譯為高質感的視覺語言。',
+                story: '在《非凡可頌的匠心技術與工法解析》的裝幀設計中，我們以「結構」為核心概念。透過可頌蜂巢般的完美斷面，並結合嚴謹的格律排版，呼應烘焙過程中對溫度與時間的精確要求。封面的色彩層次旨在觸動讀者對酥脆口感的直覺想像。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/book/2025%E9%9D%9E%E5%87%A1%E5%8F%AF%E9%A0%8C%E5%B0%81%E5%BA%95150.jpg','https://beetlealan.github.io/my-design-assets/book/2025%E9%9D%9E%E5%87%A1%E5%8F%AF%E9%A0%8C%E5%B0%81%E9%9D%A2150.jpg']
+            },
+            { 
+                id: 'b5', type: 'books', title: '茶香菓子：和菓子與茶的味覺美學', category: '封面設計 / 視覺規劃', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/book/2025%E8%8C%B6%E9%A6%99%E8%8F%93%E5%AD%90%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A21000.jpg',
+                description: '探索茶文化與和菓子的深度連結，將靜謐的禪意精神轉化為溫潤的視覺饗宴。',
+                story: '在《茶香菓子》的封面設計中，我們追求「靜、寂、美」的氛圍。透過攝影捕捉菓子細膩的紋理與茶湯的色澤，並配合充滿留白的日式裝幀風格。整體色調以自然的茶綠與豆沙紅為主軸，讓讀者彷彿能嗅到淡淡的茶香，感受時光流轉的平靜。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/book/2025%E8%8C%B6%E9%A6%99%E8%8F%93%E5%AD%90%E5%B0%81%E5%BA%95150.jpg','https://beetlealan.github.io/my-design-assets/book/2025%E8%8C%B6%E9%A6%99%E8%8F%93%E5%AD%90%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A21000.jpg']
+            },
+            { 
+                id: 'b6', type: 'books', title: '地方微品牌', category: '封面設計 / 視覺規劃', year: '2022',
+                mainImage: 'https://beetlealan.github.io/my-design-assets/book/%E5%9C%B0%E6%96%B9%E5%BE%AE%E5%93%81%E7%89%8C_%E7%AB%8B%E9%AB%94%E5%B0%81%E9%9D%A2300.jpg',
+                description: '深度挖掘地方文化底蘊，將在地特色轉化為具備市場穿透力的品牌符號。',
+                story: '在《地方微品牌》一書的封面設計中，我們思考的是如何讓「微」品牌發揮「巨」影響。視覺上以明快且具現代感的線條結合象徵土地與職人精神的色調。透過精準的留白與字體配置，營造出既親民又不失專業度的視覺氣氛。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/book/%E5%9C%B0%E6%96%B9%E5%BE%AE%E5%93%81%E7%89%8C_%E5%B0%81%E9%9D%A2%E5%8F%B0150.jpg']
+            },
+
+            // --- 商標識別 ---
+            { 
+                id: 'c2', type: 'cis', title: 'ANR Auge & Rhea', category: '商標識別 / 品牌設計', year: '2020',
+                mainImage: 'https://beetlealan.github.io/my-design-assets/cis/ANR_CI_b-01.jpg',
+                description: '為健康食品品牌「ANR Auge & Rhea」量身打造，致力開發「吃的保養品」。品牌標榜有機認證，嚴選來自歐美與日本的頂級原料，傳遞純淨、健康與專業的保養新概念。',
+                story: '在 ANR Auge & Rhea 的 brand 視覺規劃中，我們以「國際化」與「自然美學」為核心。標誌設計以流暢的線條勾勒出 brand 首字母，展現出如同精華液般絲滑的質感與生命力。視覺調性上整合了有機產業的嚴謹與高端美妝的細膩。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/cis/%E9%85%8D%E7%BD%AE%E7%94%B3%E8%AB%8B.jpg','https://beetlealan.github.io/my-design-assets/cis/anr%E5%A5%A7%E6%A0%BC%E8%95%BE%E9%9B%85.jpg']
+            },
+            { 
+                id: 'c1', type: 'cis', title: 'Fitness Hero 健身英雄', category: '商標識別 / 品牌設計', year: '2021',
+                mainImage: 'https://beetlealan.github.io/my-design-assets/cis/fitnesshero_CI-01.jpg',
+                description: '為藝人祖雄自創品牌「Fitness Hero」打造品牌識別，以高品質健身用品為產品主軸，傳遞專業、活力與信任的品牌核心價值。',
+                story: '標誌設計精巧地結合了品牌首字母「F」與「h」。圖形結構採流暢的線條交織，視覺上呈現出兩手緊緊相握的意象，象徵品牌與使用者之間的連結與承諾，也體現了健身過程中力量與耐力的結合。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/cis/FitnessHero%E5%95%86%E6%A8%991_%E9%A0%81%E9%9D%A2_1.jpg','https://beetlealan.github.io/my-design-assets/cis/FitnessHero%E5%95%86%E6%A8%991_%E9%A0%81%E9%9D%A2_2.jpg']
+            },
+            { 
+                id: 'c3', type: 'cis', title: 'Dr. HUANG 醫學美容保養品牌', category: '品牌識別 / 品牌設計', year: '2024',
+                mainImage: 'https://beetlealan.github.io/my-design-assets/cis/dr.huang_ci_1.jpg',
+                description: '由台灣知名皮膚科醫師黃禎憲創立，承襲 30 年專業醫療經驗，結合黃千耀醫師推出的全新「雲朵保養計劃」理念，研發成份單純、零負擔的居家感專業保養品。',
+                story: 'Dr. HUANG 的品牌核心源自黃醫師對「預防勝於治療」的堅持. 視覺設計以亮黃色呼應家族姓氏「黃」，並融入「雲朵」意象，傳遞舒適、柔軟且無負擔的護理體驗。讓今天的肌膚，像雲一樣輕，成為療癒、陪伴感十足的日常護理品。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/cis/a109e3f8-842c-4a8b-91ee-8aa0ec4b36f2.jpeg','https://beetlealan.github.io/my-design-assets/cis/Dr.H%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F%E5%9C%96-2.jpg']
+            },
+
+            // --- 產品包裝 ---
+            { 
+                id: 'p1', type: 'packaging', title: 'ANR 純粹 膠原蛋白粉', category: '產品包裝', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/package/%E8%86%A0%E5%8E%9F%E8%9B%8B%E7%99%BD%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F-%E6%AD%A3%E9%9D%A2.jpg',
+                description: '專為追求自然美感與高效機能的族群設計，以純粹、無瑕的視覺語彙，定義「吃的保養品」之品牌高度。',
+                story: '包裝設計以極致白為基底，運用細膩的壓紋工藝與珍珠金屬色點綴，象徵肌膚的透亮度與韌性。透過視覺上的「減法」，讓消費者在接觸產品的第一時間，即能感受到品牌的專業、純淨與原料的真實質感。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/package/%E6%AD%A3%E7%A2%BA%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F01-01.jpg'],
+                year: '2020'
+            },
+            { 
+                id: 'p2', type: 'packaging', title: 'ANR 純粹 有機瑪基莓粉', category: '產品包裝', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/package/%E9%A6%AC%E5%9F%BA%E8%8E%93%E7%B2%89%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F.jpg',
+                description: '轉譯南美超級食物的強大生命力，結合嚴格的有機認證規範，打造具備國際視野與天然屏障感的高品質包裝。',
+                story: '以瑪基莓天然的深邃紫色作為識別核心，搭配磨砂質感包裝與簡約標籤配置，展現出穩定且富有質感的 brand 調性。排版上清晰標示有機來源，在科學嚴謹性與自然美學之間取得完美平衡，建立深厚的消費者信任度。',
+                gallery: [],
+                year: '2022'
+            },
+            { 
+                id: 'p3', type: 'packaging', title: 'ANR 美好 綠14有機PH平衡粉', category: '產品包裝', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/package/%E7%B6%A014%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F3.jpg',
+                description: '整合 14 種綠色植萃的營養精華，透過鮮活色調與精確的幾何排版，詮釋體體環保與健康的動態平衡。',
+                story: '視覺設計聚焦於「綠色能量」，以不同層次的綠色堆疊出深邃的律動感。幾何圖形的應用象徵身體機能的修護與平衡，選用現代感的無襯線體與留白規劃，為健康補充品注入年輕化且富有生機的當代美學。',
+                gallery: [],
+                year: '2024'
+            },
+            { 
+                id: 'p4', type: 'packaging', title: 'ANR 純粹 膠原蛋白粉 隨身包', category: '產品包裝', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/package/2023%E9%9A%A8%E8%BA%AB%E5%8C%85%E5%A4%A7%E5%B0%8F%E5%8C%85%E7%A4%BA%E6%84%8F.jpg',
+                description: '滿足現代快節奏生活的機能型隨身包裝，將繁複的保養程序轉化為輕便、優雅且具行動力的美學體驗。',
+                story: '針對鋁箔袋材質進行視覺層次優化，縮小識別比例的同時強化了撕口導引。材質選用高阻隔複合膜，確保內容物活性的同時賦予柔軟的手感。整體設計強調「隨時隨地的優雅護理」，提升產品在居家外的實用價值。',
+                gallery: [],
+                year: '2023'
+            },
+            { 
+                id: 'p5', type: 'packaging', title: 'ANR 清潔噴霧', category: '產品包裝', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/package/bottle%E5%90%88%E5%9C%96.jpg',
+                description: '打破傳統清潔產品的冷峻感，以居家療癒與純淨生活為核心，開發出兼顧實用性與現代審美的噴霧瓶身。',
+                story: '選用清透涼爽的透明瓶身，結合大幅度留白的標籤規劃，營造出空氣感十足的純淨氛圍。圖形語彙採流線設計，象徵噴霧的細膩擴散與全方位守護，讓日常清潔轉化為一種對高品質生活細節的優雅追求。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/package/bottle01_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F1.jpg','https://beetlealan.github.io/my-design-assets/package/bottle02_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F1.jpg'],
+                year: '2022'
+            },
+            { 
+                id: 'p6', type: 'packaging', title: 'Dr.HUANG 保濕精華液', category: '產品包裝', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/package/%E5%8C%85%E8%A3%9D%E7%A4%BA%E6%84%8F%E5%9C%96-2.jpg',
+                description: '在專業皮膚科醫師的監督下，將醫療級的修護能量包裝為溫暖的日常守護，實現「像雲一樣輕」的無壓護理。',
+                story: '延續 brand 識別色「暖黃」，並融入核心概念「雲朵」的柔和線條。紙質選用溫潤的手感紙搭配局部打凸工藝，不僅增加包裝層次，更傳遞出 brand 對肌膚溫柔對待的承諾。視覺上在醫師研發的嚴謹與居家的親和感之間建立了完美的連結。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/package/d011c340-c315-43c4-8cad-9ab08f3c57a1.jpeg'],
+                year: '2025'
+            },
+            
+            // --- 數位網頁 ---
+            { 
+                id: 'd1', type: 'digital', title: '國泰世華銀行 - 財富管理形象官網', category: '數位網頁 / 視覺設計', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/digitalWeb/www.cathaybk.com.tw_cathaybk_persona1.jpg',
+                description: '負責國泰世華銀行財富管理官網之核心主視覺設計（Key Visual）。協助定調專業且具信任感的品牌數位門面。',
+                story: '工坊主要參與本案之視覺定調與主視覺圖片開發。網頁之整體介面（UI）與架構則由銀行內部單位負責開發級. ',
+                gallery: [], year: '2023'
+            },
+            { 
+                id: 'd2', type: 'digital', title: '國泰世華銀行 - VIP 專屬權益網頁', category: '數位網頁 / KV 設計', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/digitalWeb/www.cathaybk.com.tw_cathaybk_personal_product_wealth_vip_1.jpg',
+                description: '專注於高端 VIP 專區之核心主視覺定調（Key Visual）。強化專屬權益的質感呈現。',
+                story: '在此專案中，我們承接了網頁開屏主圖的視覺設計。網頁版面與後續介面整合則由銀行內部技術團隊統籌執行。',
+                gallery: [], year: '2023'
+            },
+            { 
+                id: 'd3', type: 'digital', title: '國泰世華銀行 - 專業理財規劃專區', category: '數位網頁 / KV 設計', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/digitalWeb/www.cathaybk.com.tw_cathaybk_personal_wealth_1.jpg',
+                description: '為專業理財規劃專區提供形象主視覺設計（Key Visual）。以專業情境視覺，提升品牌的專業親和力。',
+                story: '工坊負責該數位平台之核心視覺素材與形象主圖設計。專區之功能介面與網頁架構則由行內開發單位負責。',
+                gallery: [], year: '2023'
+            },
+            { 
+                id: 'd4', type: 'digital', title: '國泰世華銀行 - 投研週報專業 EDM', category: 'EDM 設計 / 資訊整合', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/digitalWeb/edm20260320.jpg',
+                description: '每週發送的高價值市場研究通訊，最大化核心觀點的傳達效率，強化銀行的投研專業權威。',
+                story: '作為重要的數位接觸點，這份週報 EDM 強調閱讀動線的直覺性，確保品牌視覺的一致性延伸。',
+                gallery: [], year: '2026'
+            },
+            { 
+                id: 'd5', type: 'digital', title: '國泰世華銀行 - 數位形象與視覺規範整合', category: '數位廣宣 / 視覺規範', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/digitalWeb/VIP_CUBE1040x1040.jpg',
+                description: '負責將設計開發與銀行的制式規範、官方形象圖稿緊密結合。我們確保每一項視覺產出皆嚴格遵循企業識別系統（CIS），達成全方位一致的品牌形象。',
+                story: '在大型企業的數位廣宣中，維持一致的形象至關重要。本專案中，我們深度整合銀行官方形象圖稿，嚴格執行制式規範，在有限的設計空間內發揮創意，達成企業一體的專業視覺標準。',
+                gallery: [], year: '2024'
+            },
+            { 
+                id: 'd6', type: 'digital', title: '國泰世華銀行 - 理財講座電子邀請函', category: '數位行銷 / Banner 設計', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/digitalWeb/3840x2160-2.jpg',
+                description: '針對線下理財講座設計的數位邀請載體，融合專業講師形象，營造受邀的尊寵感與學術氛圍。',
+                story: '設計核心在於「溫度」與「專業」的交織。整體視覺調性沈穩且富有層次，有效提升受邀客戶對活動的專業期待。',
+                gallery: [], year: '2021'
+            },
+            
+            // --- 型錄報告 ---
+            { 
+                id: 'cat1', type: 'catalog', title: '國泰世華投資策略月報', category: '文件報告 / 視覺整合', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/dm/Cathays_View_201902_1COVER.jpg',
+                description: '針對金融市場趨勢提供精確的視覺轉譯，將複雜的投資數據轉化為易讀且具權威感的專業月刊。',
+                story: '在理財資訊爆炸的時代，我們強調資訊的「層級化」。透過嚴謹的排版規範與圖表設計，協助銀行將核心觀點精準傳達給投資人，建立專業信賴度。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/dm/Cathays_View_201902_4.jpg','https://beetlealan.github.io/my-design-assets/dm/Cathays_View_201902_5.jpg'], year: '2019'
+            },
+            { 
+                id: 'cat2', type: 'catalog', title: '銀行評鑑報告書', category: '企業型錄 / 技術排版', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/dm/2015%E9%8A%80%E8%A1%8C%E8%A9%95%E9%91%91%E5%A0%B1%E5%91%8A%E6%9B%B8_%E5%8D%B0%E5%88%B7%E7%94%A8-COVER.jpg',
+                description: '將嚴肅的產業評鑑數據進行視覺化整合，在符合金融監管嚴謹度的前提下，提升版面的美學張力與品牌厚度。',
+                story: '本案重點在於將大量的條文與數據轉化為直覺的視覺引導。我們運用品牌標準色進行系統化的分章導引，確保讀者在閱讀深長內容時仍能保持清晰的邏輯感。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/dm/2015%E9%8A%80%E8%A1%8C%E8%A9%95%E9%91%91%E5%A0%B1%E5%91%8A%E6%9B%B8_%E5%8D%B0%E5%88%B7%E7%94%A8-P04-05.jpg','https://beetlealan.github.io/my-design-assets/dm/2015%E9%8A%80%E8%A1%8C%E8%A9%95%E9%91%91%E5%A0%B1%E5%91%8A%E6%9B%B8_%E5%8D%B0%E5%88%B7%E7%94%A8-P14-15.jpg'], year: '2015'
+            },
+            { 
+                id: 'cat3', type: 'catalog', title: '國泰世華銀行貴賓專屬權益手冊', category: '文件報告 / 品牌形象整合', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/dm/%E6%AC%8A%E7%9B%8A%E6%89%8B%E5%86%8A-COVER.jpg',
+                description: '專為 VIP 客群打造的高規手冊，透過細膩的裝幀佈局與極致的圖文排版，詮釋品牌對頂級客戶的尊寵與承諾。',
+                story: '設計核心圍繞在「尊榮感」。我們利用大面積的留白與細緻的字體選用，並搭配情境式攝影整合，讓每一項專屬權益在紙本上都能展現出如精品般的層次感。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/dm/%E6%AC%8A%E7%9B%8A%E6%89%8B%E5%86%8A-4.jpg','https://beetlealan.github.io/my-design-assets/dm/%E6%AC%8A%E7%9B%8A%E6%89%8B%E5%86%8A-5.jpg'], year: '2016'
+            },
+            { 
+                id: 'cat4', type: 'catalog', title: '國泰世華銀行貴賓邀請摺頁型錄', category: '企業型錄 / 創意摺頁設計', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/dm/2018%E6%AD%A3%E9%9D%A2cover.jpg',
+                description: '結合創意摺頁結構與高品質視覺策略，為線下活動與貴賓服務提供最具儀式感的紙本接觸媒介。',
+                story: '透過非對稱的摺頁結構規劃，創造閱讀時的開箱層次。視覺上融合了溫暖的光影處理與品牌識別，讓一份簡單的摺頁也能承載深厚的品牌招待價值。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/dm/2018%E6%AD%A3%E9%9D%A2.jpg','https://beetlealan.github.io/my-design-assets/dm/2018%E5%8F%8D%E9%9D%A2.jpg'], year: '2019'
+            },
+            { 
+                id: 'cat5', type: 'catalog', title: '國泰世華銀行財富典藏型錄', category: '商業攝影 / 型錄視覺規劃', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/dm/%E5%85%B8%E8%97%8F%E6%89%8B%E5%86%8Acover.jpg',
+                description: '除了整體的型錄視覺規劃，甲虫影像工坊更同步負責本案之核心商業攝影。透過高品質的影像捕捉，為理財產品注入生活美學質感。',
+                story: '在這份型錄中，我們打破傳統金融 DM 的生硬感。透過專業的商業攝影，精準捕捉光影與材質細節，引領讀者從生活美學的角度重新審視財富規劃，讓視覺影像與內容達成最高度的契合，成功拉近品牌與客戶的感性距離。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/dm/%E5%85%B8%E8%97%8F%E6%89%8B%E5%86%8A%E4%B8%8B%E5%8D%886.03.02-2.jpg','https://beetlealan.github.io/my-design-assets/dm/%E5%85%B8%E8%97%8F%E6%89%8B%E5%86%8A%E4%B8%8B%E5%8D%886.03.02-4.jpg'], year: '2015'
+            },
+            { 
+                id: 'cat6', type: 'catalog', title: 'ANR 純粹 膠原蛋白粉宣傳型錄', category: '產品型錄 / 銷售輔助設計', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/dm/ANR-DM-cover.jpg',
+                description: '延續「吃的保養品」品牌定調，將產品科學與純淨美學轉化為具備說服力的產品型錄，輔助通路銷售與品牌推廣。',
+                story: '設計上強調「透明度」與「純淨感」。透過高飽和度的產品特寫與清晰的成分解析圖表，在行銷宣傳與衛教資訊之間取得平衡。版面節奏輕快活潑，完美呼應天然的品牌核心。',
+                gallery: ['https://beetlealan.github.io/my-design-assets/dm/ANR-DM-01.jpg','https://beetlealan.github.io/my-design-assets/dm/ANR-DM_02.jpg'], year: '2022'
+            },
+            
+            // --- 廣告宣傳 ---
+            { 
+                id: 'ad1', type: 'advertising', title: '國泰世華銀行 - 私人銀行廣告主視覺', category: '廣告宣傳 / 平面視覺', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/ad/cathay-21x28.5cm5-01.jpg',
+                description: '針對國泰世華私人銀行高端客群設計，運用精緻奢華的視覺語彙，精準傳達品牌的卓越服務與深厚信賴感。',
+                story: '在金融廣告設計中，質感即是信譽。我們利用沈穩的色調搭配具備未來感的線性元素，營造出既專業又具前瞻性的視覺動能。透過層次分明的版面配置，確保訊息傳達的權威性與品牌識別的一致性。',
+                gallery: [], year: '2016'
+            },
+            { 
+                id: 'ad2', type: 'advertising', title: '國泰世華銀行 - 得獎廣告主視覺', category: '廣告宣傳 / 創意海報', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/ad/21x28cm-2-4-01.jpg',
+                description: '融合金融科技與生活美學的得獎系列廣告，以大膽的視覺創意與細膩的圖像合成，協助客戶在激烈的市場競爭中脫穎而出。',
+                story: '我們深信「好的設計能讓數據說話」。本專案透過符號化的視覺手法，將複雜的銀行產品轉譯為具備高度張力的圖像，成功獲得專業獎項肯定。設計過程中強調光影與細節的極致打磨，賦予平面載體深度與生命力。',
+                gallery: [], year: '2015'
+            },
+            { 
+                id: 'ad3', type: 'advertising', title: '國泰世華銀行 - 私人銀行活動背板', category: '廣告宣傳 / 活動視覺', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/ad/%E8%83%8C%E6%9D%BF_FINAL_72_RGB-01.jpg',
+                description: '為私人銀行年度高端盛會打造的大型視覺背板。考量現場光影與拍照需求，規劃具備品牌高度且富層次感的空間視覺。',
+                story: '型錄與背板設計的挑戰在於「場景感」。我們將銀行品牌元素進行模組化延伸，透過大氣的構圖與精準的色彩控制，在實體活動現場建立起強大的品牌場域感，讓每一位與會嘉賓都能感受到尊榮的品牌禮遇。',
+                gallery: [], year: '2018'
+            },
+            { 
+                id: 'ad4', type: 'advertising', title: '城邦出版 - 國際書展海報背板', category: '廣告宣傳 / 文化展演', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/ad/2026%E5%9C%8B%E9%9A%9B%E6%9B%B8%E5%B1%95300x300_%E5%B7%A5%E4%BD%9C%E5%8D%80%E5%9F%9F1.jpg',
+                description: '針對 2026 國際書展設計的大型廣宣視覺，將閱讀的深度與現代創意結合，在喧鬧的展場中建立靜謐且具備吸引力的文化空間。',
+                story: '書展背板不僅是背景，更是閱讀精神的載體。設計上採用幾何結構呼應書冊的形狀，並以溫潤的色彩調性拉近與讀者的距離。透過大面積的視覺佈局，成功在擁擠的書展環境中捕捉受眾目光。',
+                gallery: [], year: '2026'
+            },
+            { 
+                id: 'ad5', type: 'advertising', title: '城邦出版 - 國際書展銷售背板', category: '廣告宣傳 / 促銷視覺', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/ad/%E9%8A%B7%E5%94%AE%E8%83%8C%E6%9D%BFD%E9%9D%A22-01.jpg',
+                description: '強化銷售動能的展場視覺背板，透過精確的資訊分層與活潑的版面編排，有效導引觀展群眾進入閱讀與購買情境。',
+                story: '在銷售導向的廣告設計中，閱讀動線是核心。我們利用鮮明的視覺路徑引導大眾關注重點書籍資訊，同時維持城邦出版專業而豐富的品牌質感。材質與色彩的配置均考量了現場輸出的色彩穩定度與飽和感。',
+                gallery: [], year: '2014'
+            },
+            { 
+                id: 'ad6', type: 'advertising', title: '城邦出版 - 金石堂書展促銷海報', category: '廣告宣傳 / 通路廣宣', 
+                mainImage: 'https://beetlealan.github.io/my-design-assets/ad/21x29.7-01.jpg',
+                description: '專為通路合作設計的促銷海報，結合通路特性與品牌調性，以具備節奏感的視覺傳遞，達成實體通路的高度曝光效果。',
+                story: '海報設計需在有限空間內產生強大的穿透力。我們利用具備張力的字體排版與重點突出的視覺中心，讓海報在金石堂等繁忙零售環境中依然清晰可見。設計風格嚴謹遵循品牌規範，同時不失活動所需的活潑氛圍。',
+                gallery: [], year: '2014'
+            }
+        ];
+
+        let currentType = ''; 
+
+        function showView(view) {
+            const views = {
+                'main': document.getElementById('main-view'),
+                'category': document.getElementById('category-view'),
+                'detail': document.getElementById('detail-view')
+            };
+            const navLinks = document.getElementById('nav-links');
+            const navBack = document.getElementById('nav-back');
+            const backBtn = document.getElementById('back-btn');
+            const backText = document.getElementById('back-text');
+
+            Object.values(views).forEach(v => v && v.classList.add('hidden'));
+            if(views[view]) views[view].classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (view === 'main') {
+                navLinks.classList.remove('hidden');
+                navBack.classList.add('hidden');
+            } else {
+                navLinks.classList.add('hidden');
+                navBack.classList.remove('hidden');
+                if (view === 'category') {
+                    backBtn.onclick = () => showView('main');
+                    backText.innerText = '返回主頁';
+                } else if (view === 'detail') {
+                    backBtn.onclick = () => showCategory(currentType);
+                    backText.innerText = '返回列表';
+                }
+            }
+        }
+
+        function showCategory(type) {
+            currentType = type;
+            const meta = categoryMeta[type];
+            document.getElementById('cat-title').innerText = meta.title;
+            document.getElementById('cat-desc').innerText = meta.desc;
+
+            const grid = document.getElementById('cat-grid');
+            const filtered = projectData.filter(p => p.type === type);
+
+            grid.innerHTML = filtered.map(p => `
+                <div onclick="showDetail('${p.id}')" class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4 bg-slate-100 border border-slate-100 shadow-sm">
+                        <img src="${p.mainImage}" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="bg-white text-slate-900 px-4 py-2 rounded-full text-xs font-bold shadow-xl">查看詳情</span>
+                        </div>
+                    </div>
+                    <h4 class="text-base font-bold group-hover:text-blue-600 transition truncate text-slate-900">${p.title}</h4>
+                    <p class="text-slate-400 text-xs mt-1 uppercase tracking-wider">${p.category}</p>
+                </div>
+            `).join('');
+
+            showView('category');
+            lucide.createIcons();
+        }
+
+        function showDetail(id) {
+            const p = projectData.find(item => item.id === id);
+            const content = document.getElementById('project-detail-content');
+            if(!p) return;
+
+            const displayDesc = p.description || '甲虫影像工坊憑藉逾 20 年的專業經驗，為此專案注入獨特的視覺語彙。';
+            const displayStory = p.story || '在這個專案中，我們面對的是如何平衡專業質感與市場溝通的挑戰。';
+            const displayYear = p.year || '2025';
+
+            let supplementalContent = '';
+            if (p.gallery && p.gallery.length > 0) {
+                supplementalContent = `
+                    <h3 class="text-2xl font-bold mb-6 text-slate-900">細節展示</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        ${p.gallery.map(imgUrl => `
+                            <div class="rounded-2xl overflow-hidden shadow-lg bg-slate-100 border border-slate-100 group">
+                                <img src="${imgUrl}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                            </div>
+                        `).join('')}
+                    </div>`;
+            } else {
+                supplementalContent = `<h3 class="text-2xl font-bold mb-6 text-slate-900">細節展示</h3><div class="grid grid-cols-2 gap-4"><div class="h-48 rounded-2xl bg-slate-100 animate-pulse"></div><div class="h-48 rounded-2xl bg-slate-100 animate-pulse"></div></div>`;
+            }
+
+            content.innerHTML = `
+                <div class="space-y-16">
+                    <div class="grid md:grid-cols-2 gap-12 items-end">
+                        <div class="space-y-4">
+                            <span class="text-blue-600 font-bold uppercase tracking-[0.2em] text-sm">${p.category}</span>
+                            <h1 class="text-4xl md:text-6xl font-bold leading-tight text-slate-900">${p.title}</h1>
+                        </div>
+                        <p class="text-slate-600 text-lg leading-relaxed pb-2">${displayDesc}</p>
+                    </div>
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl"><img src="${p.mainImage}" class="w-full h-auto"></div>
+                    <div class="grid md:grid-cols-3 gap-16">
+                        <div class="md:col-span-2 space-y-12">
+                            <div class="space-y-4"><h3 class="text-2xl font-bold text-slate-900">設計故事與理念</h3><p class="text-slate-600 text-lg leading-loose">${displayStory}</p></div>
+                            ${supplementalContent}
+                        </div>
+                        <div class="bg-slate-50 p-10 rounded-3xl space-y-6 border border-slate-100 h-fit">
+                            <h4 class="text-xl font-bold border-b border-slate-200 pb-4">專案規格</h4>
+                            <div class="space-y-4 text-sm text-slate-800">
+                                <div><div class="text-slate-400 font-bold uppercase tracking-widest mb-1">工坊服務</div><div class="font-medium">${p.category}</div></div>
+                                <div><div class="text-slate-400 font-bold uppercase tracking-widest mb-1">完成年份</div><div class="font-medium">${displayYear}</div></div>
+                            </div>
+                            <button onclick="window.location.hash='#contact'; showView('main');" class="w-full py-4 bg-slate-900 text-white rounded-xl font-bold shadow-lg hover:bg-slate-800 transition">洽詢類似專案</button>
+                        </div>
+                    </div>
+                </div>`;
+
+            const relatedGrid = document.getElementById('related-grid');
+            const others = projectData.filter(item => item.id !== id).slice(0, 4);
+            relatedGrid.innerHTML = others.map(op => `
+                <div onclick="showDetail('${op.id}')" class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl bg-slate-100 aspect-square mb-2 border border-slate-100">
+                        <img src="${op.mainImage}" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    </div>
+                    <h5 class="text-xs font-bold truncate group-hover:text-blue-600 transition text-slate-900">${op.title}</h5>
+                </div>`).join('');
+
+            showView('detail');
+            lucide.createIcons();
+        }
+
+        function initCategoryEntries() {
+            const entryGrid = document.getElementById('category-entry-grid');
+            if(!entryGrid) return;
+            entryGrid.innerHTML = Object.keys(categoryMeta).map(type => {
+                const count = projectData.filter(p => p.type === type).length;
+                const meta = categoryMeta[type];
+                return `
+                    <div onclick="showCategory('${type}')" class="group cursor-pointer bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-slate-100 p-2">
+                        <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
+                            <img src="${meta.cover}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900">${meta.title}</h3>
+                            <p class="text-slate-400 text-sm mt-1">${count} 個專案作品</p>
+                        </div>
+                    </div>`;
+            }).join('');
+        }
+
+        window.onload = () => {
+            initCategoryEntries();
+            lucide.createIcons();
+        };
+
+        const menuBtn = document.getElementById('menu-btn');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                // 此處可擴充手機版選單邏輯
+            });
+        }
+    </script>
+</body>
+</html>
